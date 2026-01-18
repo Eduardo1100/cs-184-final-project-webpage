@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CS184/284A Final Report | MIS + ML-guided Adaptive Sampling</title>
 
-  <!-- Inter (your usual academic vibe) -->
+  <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -38,8 +38,8 @@
       --border: rgba(231,238,248,.12);
       --border-2: rgba(231,238,248,.18);
 
-      --accent: #8ab4ff;      /* cool academic blue */
-      --accent-2: #7ee6b5;    /* soft green highlight */
+      --accent: #8ab4ff;
+      --accent-2: #7ee6b5;
       --warn: #ffd38a;
 
       --maxw: 980px;
@@ -63,11 +63,10 @@
         radial-gradient(1000px 800px at 60% 110%, rgba(138,180,255,.08), transparent 55%),
         var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
       padding-bottom: 3.25rem;
     }
 
-    /* ===== Top nav (sticky, compact) ===== */
     .nav{
       position: sticky;
       top: 0;
@@ -85,22 +84,10 @@
       justify-content:space-between;
       gap: 1rem;
     }
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:.15rem;
-      min-width: 220px;
-    }
-    .brand .title{
-      font-weight: 700;
-      letter-spacing: .2px;
-      font-size: .98rem;
-      color: var(--text);
-    }
-    .brand .subtitle{
-      font-size: .82rem;
-      color: var(--muted);
-    }
+    .brand{ display:flex; flex-direction:column; gap:.15rem; min-width: 220px; }
+    .brand .title{ font-weight: 700; letter-spacing: .2px; font-size: .98rem; color: var(--text); }
+    .brand .subtitle{ font-size: .82rem; color: var(--muted); }
+
     .nav a{
       color: var(--muted);
       text-decoration:none;
@@ -117,14 +104,8 @@
       border-color: var(--border);
       background: rgba(255,255,255,.03);
     }
-    .nav-links{
-      display:flex;
-      flex-wrap: wrap;
-      justify-content:flex-end;
-      gap: .25rem;
-    }
+    .nav-links{ display:flex; flex-wrap: wrap; justify-content:flex-end; gap: .25rem; }
 
-    /* ===== Hero ===== */
     header.hero{
       max-width: var(--maxw);
       margin: 1.75rem auto 0;
@@ -162,14 +143,9 @@
       line-height: 1.2;
       margin-bottom: .55rem;
     }
-    .hero h1 .accent{
-      color: var(--accent);
-    }
-    .hero p{
-      color: var(--muted);
-      font-size: 1.0rem;
-      max-width: 60ch;
-    }
+    .hero h1 .accent{ color: var(--accent); }
+    .hero p{ color: var(--muted); font-size: 1.0rem; max-width: 70ch; }
+
     .meta{
       border: 1px solid var(--border);
       background: rgba(0,0,0,.18);
@@ -187,7 +163,6 @@
     .meta .k{ color: var(--faint); font-size:.85rem; }
     .meta .v{ color: var(--text); font-size:.9rem; font-weight:600; text-align:right; }
 
-    /* ===== Main layout ===== */
     main{
       max-width: var(--maxw);
       margin: 1.25rem auto 0;
@@ -220,15 +195,13 @@
       box-shadow: 0 0 0 4px rgba(138,180,255,.15);
       flex: 0 0 auto;
     }
-
     .card h3{
       margin-top: 1.05rem;
       margin-bottom: .5rem;
-      font-size: 1.1rem;
+      font-size: 1.12rem;
       color: var(--text);
       letter-spacing: -0.15px;
     }
-
     .card h4{
       margin-top: .9rem;
       margin-bottom: .45rem;
@@ -258,7 +231,6 @@
       color: #bcd2ff;
     }
 
-    /* ===== Callouts (your “p.callout” pattern) ===== */
     .callout{
       border: 1px solid rgba(138,180,255,.22);
       background: rgba(138,180,255,.06);
@@ -272,8 +244,41 @@
       border-color: rgba(255,211,138,.25);
       background: rgba(255,211,138,.08);
     }
+    .callout.good{
+      border-color: rgba(126,230,181,.20);
+      background: rgba(126,230,181,.08);
+    }
+    .callout .small{
+      margin-top:.5rem;
+      color: var(--faint);
+      font-size: .95rem;
+    }
 
-    /* ===== Code styling ===== */
+    /* glossary and definition blocks */
+    .glossary{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .9rem;
+      margin-top: .85rem;
+    }
+    .def{
+      border: 1px solid rgba(231,238,248,.12);
+      background: rgba(0,0,0,.14);
+      border-radius: var(--radius-sm);
+      padding: .85rem .9rem;
+    }
+    .def .term{
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .35rem;
+      font-size: .98rem;
+      letter-spacing: -0.1px;
+    }
+    .def .meaning{
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
     code{
       font-family: var(--mono);
       font-size: .92em;
@@ -301,7 +306,6 @@
       font-size: .92rem;
     }
 
-    /* ===== Algo blocks (cleaner than nested divs) ===== */
     .algo{
       margin-top: .6rem;
       padding: 1rem;
@@ -311,12 +315,8 @@
     }
     .algo p{ margin: .45rem 0; }
     .algo ul, .algo ol{ margin: .55rem 0 .25rem; }
-    .inline-note{
-      color: var(--faint);
-      font-size: .95rem;
-    }
+    .inline-note{ color: var(--faint); font-size: .95rem; }
 
-    /* ===== Tables-as-grids (responsive) ===== */
     .grid-2{
       display:grid;
       grid-template-columns: repeat(2, minmax(0,1fr));
@@ -326,6 +326,7 @@
     @media (max-width: 860px){
       .hero-grid{ grid-template-columns: 1fr; }
       .grid-2{ grid-template-columns: 1fr; }
+      .glossary{ grid-template-columns: 1fr; }
       .brand{ min-width: unset; }
     }
 
@@ -350,7 +351,6 @@
       background: rgba(0,0,0,.18);
     }
 
-    /* ===== Details / summary ===== */
     details{
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
@@ -380,7 +380,6 @@
       margin: 1.5rem 0;
     }
 
-    /* ===== Footer ===== */
     footer{
       max-width: var(--maxw);
       margin: 1.75rem auto 0;
@@ -390,13 +389,7 @@
       font-size: .92rem;
     }
 
-    /* ===== Small “chips” ===== */
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:.5rem;
-      margin-top: .9rem;
-    }
+    .chips{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top: .9rem; }
     .chip{
       border: 1px solid rgba(231,238,248,.14);
       background: rgba(0,0,0,.16);
@@ -408,7 +401,6 @@
     }
     .chip strong{ color: var(--text); font-weight:650; }
 
-    /* ===== Section anchor offset for sticky nav ===== */
     section[id]{ scroll-margin-top: 82px; }
   </style>
 </head>
@@ -419,9 +411,11 @@
     <div class="nav-inner">
       <div class="brand">
         <div class="title">CS184/284A Final Report</div>
-        <div class="subtitle">MIS + ML-guided Adaptive Sampling (ViT / CLIP SBAS)</div>
+        <div class="subtitle">Multiple Importance Sampling + ViT Saliency-Biased Adaptive Sampling</div>
       </div>
       <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#glossary">Glossary</a>
         <a href="#abstract">Abstract</a>
         <a href="#technical_approach">Approach</a>
         <a href="#mis-direct-lighting">MIS</a>
@@ -440,21 +434,20 @@
         <div>
           <h1>
             Final Report:
-            <span class="accent">MIS</span>
+            <span class="accent">Better light sampling</span>
             &amp;
-            <span class="accent">ML-guided</span>
-            Adaptive Sampling
+            <span class="accent">smarter sample budgets</span>
           </h1>
           <p>
-            We extend our HW3 path tracer with advanced BSDFs (mirror, glass, microfacet conductor),
-            a two-branch MIS direct-light estimator (light sampling + BSDF sampling),
-            and saliency-biased adaptive sampling using a ViT/CLIP prior.
+            This report explains how we made a path tracer produce cleaner images with fewer wasted samples.
+            We did it in two complementary ways: (1) we improved <em>how</em> we choose random light directions (MIS),
+            and (2) we improved <em>where</em> we spend samples in the image (SBAS using a ViT saliency prior).
           </p>
 
           <div class="chips">
-            <div class="chip"><strong>Render:</strong> C++</div>
-            <div class="chip"><strong>Saliency:</strong> PyTorch + OpenCV</div>
-            <div class="chip"><strong>Write-up:</strong> HTML/CSS + KaTeX</div>
+            <div class="chip"><strong>Renderer:</strong> C++ path tracer</div>
+            <div class="chip"><strong>Saliency:</strong> CLIP/ViT (PyTorch)</div>
+            <div class="chip"><strong>Math:</strong> KaTeX</div>
           </div>
 
           <p class="callout warn" style="margin-top:1rem;">
@@ -478,7 +471,7 @@
         <aside class="meta" aria-label="report metadata">
           <div class="row"><div class="k">Course</div><div class="v">CS184/284A</div></div>
           <div class="row"><div class="k">Project</div><div class="v">Final</div></div>
-          <div class="row"><div class="k">Focus</div><div class="v">MIS + SBAS</div></div>
+          <div class="row"><div class="k">What improved?</div><div class="v">Variance</div></div>
           <div class="row"><div class="k">Scenes</div><div class="v">CBspheres_tex, CBdragon_microfacet_au</div></div>
           <div class="row"><div class="k">Target spp</div><div class="v">4096</div></div>
         </aside>
@@ -487,108 +480,220 @@
   </header>
 
   <main>
+    <!-- NEW: Overview (non-expert friendly) -->
+    <section id="overview" class="card">
+      <h2>Overview</h2>
+
+      <p>
+        A <strong>path tracer</strong> renders an image by simulating many random light paths.
+        For each pixel, it repeatedly shoots a ray into the scene, lets it bounce off surfaces,
+        and adds up the light that eventually reaches the camera.
+      </p>
+
+      <p class="callout good">
+        <strong>Main problem:</strong> randomness creates noise.
+        If we spend samples in the “wrong places” (directions that miss lights, or pixels that don’t need more work),
+        the image converges slowly.
+        <div class="small">
+          Our goal is not to remove randomness. The goal is to make randomness <em>efficient</em>, so each sample has a higher chance of contributing meaningful light.
+        </div>
+      </p>
+
+      <h3>What we added (in one sentence each)</h3>
+      <ul>
+        <li><strong>Advanced materials (BSDFs):</strong> we added realistic mirror, glass, and microfacet metal behavior, so the scene can create sharp reflections, refractions, and glossy highlights.</li>
+        <li><strong>MIS for direct lighting:</strong> when estimating light at a surface point, we combine two “proposal strategies” for choosing an incoming direction: sample the light directly and sample the BSDF.</li>
+        <li><strong>SBAS (saliency-biased adaptive sampling):</strong> we allocate more samples to visually important pixels using a ViT/CLIP saliency map, while still using variance-based stopping so we do not over-trust the prior.</li>
+      </ul>
+
+      <p class="callout">
+        <strong>How to read this page:</strong> If you’re new to rendering, read the Glossary next.
+        If you already know the basics, jump to MIS (the math-heavy part) and then SBAS (the system design part).
+      </p>
+    </section>
+
+    <!-- NEW: Glossary / definitions -->
+    <section id="glossary" class="card">
+      <h2>Glossary (quick definitions)</h2>
+      <p>
+        These are the minimum concepts you need to follow the rest of the report.
+        We keep the explanations informal here, then use rigorous equations in later sections.
+      </p>
+
+      <div class="glossary">
+        <div class="def">
+          <div class="term">Radiance \(L\)</div>
+          <div class="meaning">
+            “How much light” travels in a specific direction. Path tracing estimates radiance arriving at the camera.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">BSDF \(f(\omega_o,\omega_i)\)</div>
+          <div class="meaning">
+            A function that tells you how a surface scatters light: given incoming direction \(\omega_i\), how much is sent toward outgoing direction \(\omega_o\).
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">PDF \(p(\omega)\)</div>
+          <div class="meaning">
+            The probability density of sampling direction \(\omega\). Monte Carlo estimators divide by the PDF to stay unbiased.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">Variance (noise)</div>
+          <div class="meaning">
+            Even if an estimator is correct on average, random samples fluctuate. High variance shows up as grainy noise and “fireflies”.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">Delta BSDF</div>
+          <div class="meaning">
+            A “perfectly sharp” distribution (mirror/glass specular). It only scatters into one exact direction, so most random proposals miss it.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">MIS</div>
+          <div class="meaning">
+            Multiple Importance Sampling. Combine multiple ways of sampling the same integral, weighting each sample using its PDF to reduce variance.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">Adaptive sampling</div>
+          <div class="meaning">
+            Stop sampling pixels that have already converged (low uncertainty), and spend more samples on pixels that still look noisy.
+          </div>
+        </div>
+
+        <div class="def">
+          <div class="term">Saliency map</div>
+          <div class="meaning">
+            A per-pixel heatmap predicting which regions are visually important. We use a ViT (CLIP) to compute it.
+          </div>
+        </div>
+      </div>
+
+      <p class="callout">
+        <strong>Technical note.</strong> We keep the estimators unbiased by always dividing by the correct PDF.
+        The “smarts” (MIS/SBAS) are about choosing better PDFs and allocating compute, not changing the physics.
+      </p>
+    </section>
+
     <section id="abstract" class="card">
       <h2>Abstract</h2>
       <p>
-        In this project we extended our HW3 path tracer with three key additions:
+        We extended our HW3 path tracer with three additions that together reduce noise and wasted computation:
       </p>
       <ol>
         <li>
-          We implemented advanced BSDFs for <em>mirror</em>, <em>glass</em>, and <em>microfacet (conductor)</em>,
-          enabling sharp specular and realistic metallic looks.
+          <strong>Advanced BSDFs.</strong>
+          Mirror and glass introduce perfectly sharp reflection/refraction, while microfacet metal produces realistic glossy highlights.
         </li>
         <li>
-          We improved direct-light estimation with <strong>Multiple Importance Sampling</strong> (MIS): we added a
-          BSDF-sampling branch and blended it with explicit light sampling via the two-sample power heuristic. We
-          also included a delta-aware tweak for specular cases.
+          <strong>MIS for direct lighting.</strong>
+          We estimate the direct illumination at a surface point by combining (a) explicitly sampling light sources and
+          (b) sampling the BSDF. We blend them using the two-sample power heuristic (\(\beta=2\)) and add a delta-aware tweak for specular surfaces.
         </li>
         <li>
-          <strong>Adaptive sampling with a ViT saliency prior.</strong> We precomputed a CLIP/ViT saliency heatmap
-          and biased per-pixel budgets and convergence thresholds so that high-saliency regions (faces, silhouettes,
-          highlights) got more samples and tighter confidence intervals, while low-saliency regions (flat walls, empty
-          background) stopped earlier. This played nicely with MIS + advanced BSDFs: caustics and microfacet highlights
-          retained quality, but larger uniform areas converged quickly.
+          <strong>SBAS (ViT saliency-biased adaptive sampling).</strong>
+          We compute a CLIP/ViT saliency heatmap and use it to bias per-pixel sample budgets and convergence thresholds,
+          while still relying on variance-based confidence intervals to prevent the prior from causing harm when it is wrong.
         </li>
       </ol>
 
       <p class="callout">
-        <strong>What to watch for as you read:</strong>
-        The story is “variance management”. MIS reduces variance by proposing better directions; SBAS reduces wasted samples by
-        spending compute where errors are most noticeable.
+        <strong>High-level takeaway:</strong> MIS reduces variance by sampling <em>better directions</em>.
+        SBAS reduces wasted work by sampling <em>better pixels</em>.
       </p>
     </section>
 
     <section id="technical_approach" class="card">
       <h2>1. Technical Approach</h2>
 
-      <h3>1.1 Advanced BSDFs</h3>
+      <h3>1.1 Advanced BSDFs (materials)</h3>
+      <p>
+        A BSDF is the mathematical rule that tells the renderer how light changes direction at a surface.
+        If the BSDF is wrong, the image will look wrong, and the sampling strategy will also struggle.
+      </p>
+
       <ul>
         <li>
-          <strong>Mirror BSDF (Delta Reflection)</strong>
+          <strong>Mirror BSDF (delta reflection)</strong>
           <div class="algo">
-            <p><strong>Goal.</strong> Ideal specular reflection with stable numerics and clean MIS interaction.</p>
-            <p><strong>Evaluation.</strong> Return non-zero only if \( \omega_i \) equals the perfect reflection of \( \omega_o \) (within tolerance \( \sim 10^{-3} \)).</p>
-            <p><strong>Sampling.</strong> Deterministic: \( \omega_i = \mathrm{reflect}(\omega_o) \), <code>pdf = 1</code>.</p>
-            <p><strong>Key lines (pseudo):</strong></p>
-            <ul>
-              <li><code>reflect(wo, wi);</code> &nbsp; // \( \omega_i = -\omega_o + 2(\omega_o\cdot n)n \)</li>
-              <li><code>if (norm(wi - reflect(wo)) &lt; tol) return rho_r;</code></li>
-              <li class="inline-note">Use EPS origin offset to avoid self-intersection.</li>
-            </ul>
+            <p><strong>What it models.</strong> A perfect mirror reflects light into exactly one direction.</p>
+            <p>
+              <strong>Mathematical behavior.</strong> The BSDF is a <em>delta distribution</em>:
+              it is zero everywhere except at the perfect reflection direction.
+            </p>
+            <p>
+              <strong>Sampling.</strong> Deterministic:
+              \( \omega_i = \mathrm{reflect}(\omega_o) \) and we set <code>pdf = 1</code> because we always return that one direction.
+            </p>
             <p class="inline-note">
-              MIS note: delta lobes are almost never proposed by light sampling, so direct-lighting benefits from leaning on the BSDF branch.
+              Why “tolerance”? In floating-point arithmetic, “exact equality” is fragile.
+              We treat directions within ~\(10^{-3}\) as “the same” to avoid false zeros.
             </p>
           </div>
         </li>
 
         <li>
-          <strong>Glass BSDF (Specular R + T, Exact Fresnel)</strong>
+          <strong>Glass BSDF (specular reflection + refraction with Fresnel)</strong>
           <div class="algo">
-            <p><strong>Goal.</strong> Ideal specular reflection + refraction with accurate dielectric Fresnel and energy-correct throughput.</p>
+            <p><strong>What it models.</strong> Glass does two things: it reflects some light and transmits the rest.</p>
+
             <p>
-              <strong>Fresnel (dielectric).</strong>
-              Compute \( F = \tfrac{1}{2}(R_{\parallel}^2 + R_{\perp}^2) \) with
-              \( \sin\theta_t = (\eta_i/\eta_t)\sin\theta_i \); on TIR set \( F=1 \).
+              <strong>How we decide the split.</strong>
+              Fresnel gives a reflection probability \(F\) that depends on angle and indices of refraction.
+              At grazing angles, glass reflects more; at normal incidence, it transmits more.
+              Total internal reflection (TIR) is handled by setting \(F=1\).
             </p>
-            <p><strong>Sampling (mixture of deltas).</strong></p>
+
+            <p>
+              <strong>Sampling strategy.</strong> We flip a biased coin:
+            </p>
             <ul>
-              <li><em>With prob. \( F \):</em> reflection, \( \omega_i = \mathrm{reflect}(\omega_o) \), <code>pdf = F</code>, contribution \( \rho_r F \).</li>
-              <li><em>With prob. \( 1-F \):</em> refraction, Snell’s \( \omega_t \), <code>pdf = 1-F</code>, contribution \( \rho_t (\eta_i/\eta_t)^2 (1-F)/|\cos\theta_t| \).</li>
+              <li>With probability \(F\): sample the reflection direction.</li>
+              <li>With probability \(1-F\): sample the refraction direction from Snell’s law.</li>
             </ul>
-            <p><strong>Evaluation path.</strong> Only the exact R or T directions return non-zero (tolerance \( \sim 10^{-3} \)).</p>
-            <p><strong>Key lines (pseudo):</strong></p>
-            <ul>
-              <li><code>double F = fresnel_dielectric(abs(wo.z), eta_i, eta_t);</code></li>
-              <li><code>if (coin_flip(F)) { wi = reflect(wo); pdf = F; return rho_r * F; }</code></li>
-              <li><code>if (!refract(wo, &amp;wt, ior)) { wi = reflect(wo); pdf = 1; return rho_r; }</code></li>
-              <li><code>wi = wt; pdf = 1 - F; return rho_t * (eta*eta) * (1 - F) / abs_cos_theta(wi);</code></li>
-            </ul>
+
+            <p>
+              <strong>Energy correction.</strong>
+              Transmitted radiance scales by \((\eta_i/\eta_t)^2\) to account for how radiance transforms across media.
+              We also divide by \(|\cos\theta_t|\) when needed so the estimator matches the rendering equation’s geometry factor.
+            </p>
+
             <p class="inline-note">
-              In estimators we multiply by \( |\cos\theta| \) (not \( \max(0,\cdot) \)) so refracted directions contribute correctly.
+              This section is where bugs often appear. A common mistake is clamping \(\cos\theta\) to \(\max(0,\cos\theta)\),
+              which breaks transmission because refracted rays live on the “other side” of the surface.
             </p>
           </div>
         </li>
 
         <li>
-          <strong>Microfacet (Conductor) — Beckmann NDF, Exact \( (\eta,k) \) Fresnel</strong>
+          <strong>Microfacet conductor (metal) with Beckmann NDF</strong>
           <div class="algo">
             <p>
-              <strong>Evaluation.</strong> For \( \omega_o\!\cdot n&gt;0, \omega_i\!\cdot n&gt;0 \),
-              $$f =
-              \frac{D(\mathbf{h})\,F(\omega_i\!\cdot\!\mathbf{h})\,G}{4\,\cos\theta_i\,\cos\theta_o},\quad
-              D(\mathbf{h}) = \frac{e^{-\tan^2\theta_h/\alpha^2}}{\pi \alpha^2 \cos^4\theta_h}.$$
-              \( F \) uses exact conductor Fresnel with \( (\eta,k) \) per channel; \( G \) uses a Smith-style clamp.
+              <strong>What it models.</strong> Metals look glossy because they behave like a collection of tiny mirror-like facets.
+              A microfacet model makes that idea precise.
             </p>
+
             <p>
-              <strong>Sampling (half-vector).</strong> Sample \( \mathbf{h} \) from Beckmann (invert CDF for \( \theta_h \), uniform \( \phi \)),
-              reflect \( \omega_o \) about \( \mathbf{h} \), and convert pdf via Jacobian \( 1/(4\,\omega_o\!\cdot\!\mathbf{h}) \).
+              <strong>Rigorous model.</strong> For valid directions (\(\omega_o\!\cdot n&gt;0\) and \(\omega_i\!\cdot n&gt;0\)):
+              $$f(\omega_o,\omega_i)=\frac{D(\mathbf{h})\,F(\omega_i\!\cdot\!\mathbf{h})\,G(\omega_o,\omega_i)}{4\,\cos\theta_i\,\cos\theta_o}.$$
+              Here \(D\) is the Beckmann normal distribution function (controls roughness), \(F\) is the conductor Fresnel (with \((\eta,k)\)),
+              and \(G\) accounts for masking/shadowing between facets.
             </p>
-            <p><strong>Key lines (pseudo):</strong></p>
-            <ul>
-              <li><code>sample h ~ Beckmann(alpha); wi = reflect(wo, h); if (wi.z &lt;= 0) reject;</code></li>
-              <li><code>pdf(wi) = (D(h) * cos(theta_h)) / (4 * dot(wo, h));</code></li>
-              <li><code>return (D * F * G) / (4 * cos_i * cos_o);</code></li>
-            </ul>
+
+            <p>
+              <strong>Sampling.</strong> We sample a half-vector \(\mathbf{h}\) from \(D\),
+              then reflect \(\omega_o\) around \(\mathbf{h}\) to get \(\omega_i\).
+              The PDF must include the Jacobian factor \(1/(4\,\omega_o\!\cdot\!\mathbf{h})\) so the estimator stays correct.
+            </p>
           </div>
         </li>
       </ul>
@@ -596,170 +701,199 @@
       <hr class="sep">
 
       <section id="mis-direct-lighting">
-        <h3>1.2 Algorithm: Multiple Importance Sampling (MIS) for Direct Lighting</h3>
+        <h3>1.2 Multiple Importance Sampling (MIS) for direct lighting</h3>
+
         <p>
-          <strong>Goal.</strong> Combine <em>explicit light sampling</em> and <em>BSDF sampling</em> to estimate direct illumination with lower variance,
-          including robust handling of delta lights and delta BSDFs.
+          At a surface point, “direct lighting” means: how much light arrives from light sources without extra bounces.
+          Computing this is an integral over all incoming directions.
+          In Monte Carlo, we approximate that integral by sampling directions.
         </p>
 
         <p class="callout">
-          <strong>Intuition.</strong> If a light sampler is good at “finding lights” but bad at “finding glossy directions”, and the BSDF sampler has the opposite strength,
-          MIS lets each do what it’s good at, then blends them with weights tied to their PDFs.
+          <strong>Core idea:</strong> different sampling methods are good in different situations.
+          Light sampling is great when the light is small or bright, because it aims directly at lights.
+          BSDF sampling is great when the surface is glossy/specular, because it aims along directions the material prefers.
+          MIS blends them to reduce noise.
         </p>
 
+        <h4>The quantity we are estimating</h4>
         <p>
-          <strong>Inputs.</strong> Hit point \( \mathbf{x} \), shading frame \( (o2w,w2o) \), outgoing direction \( \omega_o \) (local),
-          lights \( \{\mathcal{L}\} \), and the BSDF at \( \mathbf{x} \).<br>
-          <strong>Output.</strong> Direct radiance estimate \( L_{\text{dir}}(\mathbf{x},\omega_o) \).
+          The direct lighting term at point \(\mathbf{x}\) for outgoing direction \(\omega_o\) is (conceptually):
+          $$L_{\text{dir}}(\mathbf{x},\omega_o) = \int_{\Omega} f(\omega_o,\omega_i)\,L_i(\omega_i)\,|\cos\theta_i|\,d\omega_i.$$
+          Where:
+        </p>
+        <ul>
+          <li>\(f(\omega_o,\omega_i)\) is the BSDF (surface scattering).</li>
+          <li>\(L_i(\omega_i)\) is incoming light from direction \(\omega_i\) (zero if blocked).</li>
+          <li>\(|\cos\theta_i|\) is the geometry factor (how “head-on” the incoming direction hits the surface).</li>
+        </ul>
+
+        <h4>Estimator 1: sample the light</h4>
+        <p>
+          We ask the light source: “give me a direction that actually points to you.”
+          The light provides a direction \(\omega_i\) with a known PDF \(p_{\text{light}}(\omega_i)\).
+          Then one unbiased sample contribution is:
+          $$\widehat L_{\text{light}}=\frac{f(\omega_o,\omega_i)\,L_i(\omega_i)\,|\cos\theta_i|}{p_{\text{light}}(\omega_i)}.$$
         </p>
 
-        <h4>Estimators</h4>
-        <ol>
-          <li>
-            <strong>Light-sampling estimator.</strong> For each light \( \mathcal{L} \), draw \( n_\mathcal{L} \) samples:
-            $$\omega_i \sim p_{\text{light}}(\cdot),\quad (\mathbf{x}\!\to\!\mathbf{y})\ \text{unoccluded}.$$
-            Per-sample contribution:
-            $$\widehat L_{\text{light}}=\frac{f(\omega_o,\omega_i)\,L_i(\omega_i)\,|\cos\theta_i|}{p_{\text{light}}(\omega_i)}.$$
-            Use a shadow ray with <code>min_t = EPS</code> and <code>max_t = distToLight - EPS</code>.
-          </li>
-          <li>
-            <strong>BSDF-sampling estimator.</strong> Draw one BSDF direction:
-            $$\omega_i \sim p_{\text{bsdf}}(\cdot),$$
-            trace a shadow ray; if it hits emissive geometry, accumulate:
-            $$\widehat L_{\text{bsdf}}=\frac{f(\omega_o,\omega_i)\,L_i(\omega_i)\,|\cos\theta_i|}{p_{\text{bsdf}}(\omega_i)}.$$
-          </li>
-        </ol>
-
-        <h4>Two-Estimator MIS Blend (Power heuristic, \( \beta=2 \))</h4>
+        <h4>Estimator 2: sample the BSDF</h4>
         <p>
+          We ask the surface: “give me a direction you like to scatter light.”
+          The BSDF sampler returns \(\omega_i\) with PDF \(p_{\text{bsdf}}(\omega_i)\).
+          If that ray hits an emissive object, we accumulate:
+          $$\widehat L_{\text{bsdf}}=\frac{f(\omega_o,\omega_i)\,L_i(\omega_i)\,|\cos\theta_i|}{p_{\text{bsdf}}(\omega_i)}.$$
+        </p>
+
+        <h4>How MIS combines them (power heuristic)</h4>
+        <p>
+          We compute weights from the two PDFs (bigger PDF means “this strategy was more responsible for producing this direction”):
           $$w_{\text{light}}=\frac{p_{\text{light}}^2}{p_{\text{light}}^2+p_{\text{bsdf}}^2},\qquad
           w_{\text{bsdf}}=\frac{p_{\text{bsdf}}^2}{p_{\text{light}}^2+p_{\text{bsdf}}^2}.$$
         </p>
         <p>
-          $$L_{\text{dir}} = w_{\text{light}}\ \widehat L_{\text{light}} + w_{\text{bsdf}}\ \widehat L_{\text{bsdf}}.$$
-          If one branch is unavailable (zero pdf or no hit), we return the other branch.
+          Then:
+          $$L_{\text{dir}} \approx w_{\text{light}}\ \widehat L_{\text{light}} + w_{\text{bsdf}}\ \widehat L_{\text{bsdf}}.$$
         </p>
 
-        <h4>Delta-aware refinement</h4>
-        <ul>
-          <li><strong>Delta lights:</strong> use \( n_\mathcal{L}=1 \) and rely on light sampling.</li>
-          <li>
-            <strong>Delta BSDFs (mirror/glass):</strong> light sampling almost never proposes the specular direction, so we bias the blend:
-            $$L_{\text{dir}}=\begin{cases}
-            0.2\,\widehat L_{\text{light}}+0.8\,\widehat L_{\text{bsdf}}, & \text{delta BSDF}\\[2pt]
-            w_{\text{light}}\,\widehat L_{\text{light}} + w_{\text{bsdf}}\,\widehat L_{\text{bsdf}}, & \text{otherwise}.
-            \end{cases}$$
-          </li>
-        </ul>
+        <p class="callout">
+          <strong>Why squaring?</strong>
+          Squaring (the “power heuristic”) more aggressively favors the strategy with the higher PDF.
+          In practice, that reduces variance in cases where one method is clearly better.
+        </p>
 
-        <h4>Implementation snippet</h4>
+        <h4>Delta-aware adjustment (why we treat mirrors/glass specially)</h4>
+        <p>
+          Mirror and glass have delta lobes: the “correct” incoming direction is essentially one exact direction.
+          Light sampling almost never proposes that exact direction, so its contribution can become a rare-event with huge weight (fireflies).
+          We therefore bias the blend toward BSDF sampling on delta BSDF surfaces:
+        </p>
         <pre><code class="language-cpp">// For delta-distribution materials, adjust MIS weights to improve reflection results
 if (isect.bsdf-&gt;is_delta()) {
   double weight_bsdf = 0.8;
   double weight_light = 0.2;
   return L_out_lighting_sample * weight_light + L_out_bsdf_sample * weight_bsdf;
 }</code></pre>
+        <p class="inline-note">
+          This is a variance-reduction hack: it reduces bright outliers. It can introduce slight bias, but visually it stabilizes specular highlights.
+        </p>
       </section>
 
       <hr class="sep">
 
       <section id="vit-saliency-approach">
-        <h3>1.3 ML Guided Adaptive Sampling (ViT Saliency, SBAS)</h3>
+        <h3>1.3 SBAS: ViT saliency-biased adaptive sampling</h3>
+        <p>
+          Adaptive sampling uses statistics: for each pixel, we track the running mean and variance of sample values.
+          If the uncertainty is small enough, we stop sampling that pixel.
+        </p>
+
+        <p class="callout">
+          <strong>SBAS changes only one thing:</strong> before adaptive sampling kicks in, we give some pixels a head start by allocating them more samples,
+          based on a saliency map \(s(x,y)\in[0,1]\).
+          We still use confidence intervals to decide when a pixel is “done”, so the algorithm can recover if the saliency prior is wrong.
+        </p>
+
         <ul>
-          <li><strong>Prior.</strong> A ViT/CLIP saliency heatmap \( s(x,y)\in[0,1] \) resized to the framebuffer.</li>
-          <li><strong>Budget map.</strong> Per-pixel spp cap:
+          <li><strong>Prior.</strong> A ViT/CLIP saliency map \(s(x,y)\) predicts which pixels are perceptually important.</li>
+          <li><strong>Budget map.</strong> We map \(s\) to a per-pixel sample cap:
             \( n_{\max}(x,y)=\mathrm{clamp}(\text{base\_spp}\cdot[a+b\,s],\,n_{\min},\,n_{\max}) \).
           </li>
-          <li><strong>Convergence rule.</strong> CI test uses a saliency-scaled tolerance:
-            \( I \le \tau(s)\mu \), with \( \tau(s)=\tau_{\text{lo}}(1-s)+\tau_{\text{hi}}s \)
-            (high saliency ⇒ tighter tolerance).
+          <li><strong>Convergence rule.</strong> We test whether the confidence-interval half-width \(I\) is small compared to the mean \(\mu\):
+            \( I \le \tau(s)\mu \), where high-saliency pixels use a smaller tolerance.
           </li>
-          <li><strong>Safety rails.</strong> Hard floor on spp, plus CI gating: stop early if CI is already tight.</li>
-          <li class="inline-note">We interpret <code>maxTolerance = 0.05</code> as a relative 5% CI half-width.</li>
+          <li><strong>Safety rails.</strong> Clamp SPP with a hard floor/ceiling, and always allow early-stop if CI is already tight.</li>
         </ul>
+
+        <pre><code class="language-cpp">// Policy sketch (pseudo)
+int budget_from_prior = lerp(min_spp, max_spp, s);
+
+// Anneal prior influence over time: variance gets more say later
+budget_from_prior = mix(budget_from_prior, ns_aa, anneal_factor);
+
+// CI gating: stop sampling once uncertainty is low
+while (n &lt; budget_from_prior) {
+  take_batch();
+  if (n &gt;= 2 &amp;&amp; I &lt;= tol * mu) break;
+}</code></pre>
+
+        <p class="inline-note">
+          The key design principle is “the prior proposes, the statistics decide.”
+        </p>
       </section>
 
       <hr class="sep">
 
-      <h3>2. Challenges</h3>
+      <h3>2. Challenges (what broke and how we fixed it)</h3>
 
-      <h4>Challenge 1: Debugging the Glass BSDF</h4>
-      <p><strong>Issue.</strong> Black spots, inverted shadows, and reduced transparency.</p>
-      <p><strong>Cause.</strong> A geometry term computed as <code>max(0,z)</code> incorrectly zeroed valid refracted paths. Transmission needs \( |\cos\theta| \).</p>
-      <p><strong>Fix.</strong> Replaced <code>std::max(0.0, ...z)</code> with <code>fabs(...z)</code> in direct lighting and recursive bounces.</p>
-      <p><strong>Result.</strong> Artifacts disappeared and transparency was restored.</p>
-
-      <h4>Challenge 2: Delta distributions in MIS (fireflies)</h4>
+      <h4>Challenge 1: Glass BSDF bugs (black patches)</h4>
       <p>
-        Equal branch weights created occasional fireflies on mirror/glass. We bias toward BSDF sampling when <code>is_delta()</code> is true.
+        <strong>Issue.</strong> Early glass produced black spots and incorrect shadows.
+        <strong>Cause.</strong> Some code used <code>max(0,z)</code> for the cosine term, which incorrectly zeroed transmission.
+        <strong>Fix.</strong> Use \(|\cos\theta|\) for transmission paths (and ensure Fresnel/TIR logic is consistent).
       </p>
 
-      <h4>Challenge 3: Imperfect saliency without hurting adaptive sampling</h4>
+      <h4>Challenge 2: Fireflies with delta BSDFs under MIS</h4>
       <p>
-        The ViT saliency prior can miss caustics or over-mark backgrounds. We clamp budgets, anneal prior influence, and use CI gating so variance still “wins”.
+        Rare-event weighting caused bright outliers. We added a delta-aware weight that favors BSDF sampling on mirror/glass.
       </p>
-      <pre><code class="language-cpp">// Inputs: saliency s in [0,1], variance stats (mu, sigma), CI half-width I,
-//         global caps: min_spp, max_spp
-int budget_from_prior = lerp(min_spp, max_spp, s);
 
-// Anneal prior influence over time
-budget_from_prior = mix(budget_from_prior, ns_aa, anneal_factor);
-
-// CI gating: stop early if converged
-while (n &lt; budget_from_prior) {
-  take_batch();
-  if (n &gt;= 2 &amp;&amp; I &lt;= tol * mu) break; // variance wins
-}</code></pre>
+      <h4>Challenge 3: Saliency is imperfect</h4>
+      <p>
+        We prevented saliency mistakes from hurting results by clamping budgets, annealing prior influence, and CI gating.
+      </p>
     </section>
 
     <section id="mis_results" class="card">
       <h2>3. Results</h2>
+      <p>
+        Below are qualitative comparisons showing how adding advanced materials and MIS/adaptive sampling improves realism and reduces noise.
+      </p>
 
       <div class="grid-2">
         <figure>
           <img src="dragon_step1.png" alt="dragon_step_1">
-          <figcaption>CBdragon: before Microfacet BSDF.</figcaption>
+          <figcaption>CBdragon: before Microfacet BSDF (missing metallic highlights).</figcaption>
         </figure>
 
         <figure>
           <img src="sphere_step1.png" alt="spheres_step_1">
-          <figcaption>CBspheres: before advanced BSDFs.</figcaption>
+          <figcaption>CBspheres: before advanced BSDFs (missing correct reflection/refraction behavior).</figcaption>
         </figure>
       </div>
 
       <div class="grid-2">
         <figure>
           <img src="dragon_step2.png" alt="dragon_step_2">
-          <figcaption>CBdragon_microfacet_au: Microfacet BSDF, no MIS/SBAS.</figcaption>
+          <figcaption>Microfacet added (better metal), without MIS+adaptive sampling.</figcaption>
         </figure>
 
         <figure>
           <img src="dragon_step3.png" alt="dragon_step_3">
-          <figcaption>CBdragon_microfacet_au: Microfacet BSDF + MIS + adaptive sampling.</figcaption>
+          <figcaption>Microfacet + MIS + adaptive sampling (cleaner highlights, fewer noisy outliers).</figcaption>
         </figure>
       </div>
 
       <div class="grid-2">
         <figure>
           <img src="glass_spheres_step2.png" alt="glass_spheres_step_2">
-          <figcaption>CBspheres: Glass BSDF, no MIS/SBAS.</figcaption>
+          <figcaption>Glass BSDF without MIS+adaptive sampling (more variance in caustics / specular regions).</figcaption>
         </figure>
 
         <figure>
           <img src="glass_spheres_step3.png" alt="glass_spheres_step_3">
-          <figcaption>CBspheres: Glass BSDF + MIS + adaptive sampling.</figcaption>
+          <figcaption>Glass + MIS + adaptive sampling (more stable specular lighting).</figcaption>
         </figure>
       </div>
 
       <div class="grid-2">
         <figure>
           <img src="spheres_step2.png" alt="microfacet_spheres_step_2">
-          <figcaption>CBspheres_microfacet_al_ag: Microfacet, no MIS/SBAS.</figcaption>
+          <figcaption>Microfacet spheres without MIS+adaptive sampling.</figcaption>
         </figure>
 
         <figure>
           <img src="spheres_step3.png" alt="microfacet_spheres_step_3">
-          <figcaption>CBspheres_microfacet_al_ag: Microfacet + MIS + adaptive sampling.</figcaption>
+          <figcaption>Microfacet spheres with MIS+adaptive sampling.</figcaption>
         </figure>
       </div>
     </section>
@@ -767,13 +901,16 @@ while (n &lt; budget_from_prior) {
     <section id="sbas_results" class="card">
       <h2>Saliency-Biased Adaptive Sampling (SBAS) — 4096 spp Results</h2>
       <p>
-        We compare baseline adaptive sampling (with MIS) against <strong>ViT Saliency-Biased Adaptive Sampling (SBAS)</strong>.
-        For each scene we show: the render, per-pixel sampling-rate heatmap (<em>_rate</em>), and the saliency map &amp; mask.
-        We include a 40s overhead for generating saliency from a quick 2spp preview in time comparisons.
+        Here we compare baseline adaptive sampling (with MIS) vs SBAS.
+        SBAS uses a saliency map to bias where samples go, but still stops pixels based on confidence intervals.
+        We include ~40 seconds of overhead for generating saliency from a quick 2spp preview.
       </p>
 
       <h3>CBdragon — Gold Microfacet Dragon (4096 spp)</h3>
-      <p class="inline-note">SBAS concentrates samples on high-frequency geometry (spines, face) and bright specular regions; background is deprioritized.</p>
+      <p class="inline-note">
+        The dragon’s face and spines contain high-frequency geometry and strong specular highlights.
+        SBAS concentrates samples there, and reduces samples on flat background walls.
+      </p>
 
       <div class="grid-2">
         <figure>
@@ -782,7 +919,7 @@ while (n &lt; budget_from_prior) {
         </figure>
         <figure>
           <img src="CBdragon_4096spp_rate.png" alt="CBdragon baseline sampling rate">
-          <figcaption>Baseline sampling rate</figcaption>
+          <figcaption>Baseline sampling rate (where the renderer spent samples)</figcaption>
         </figure>
       </div>
 
@@ -793,18 +930,18 @@ while (n &lt; budget_from_prior) {
         </figure>
         <figure>
           <img src="CBdragon_SBAS_4096spp_rate.png" alt="CBdragon SBAS sampling rate">
-          <figcaption>SBAS sampling rate</figcaption>
+          <figcaption>SBAS sampling rate (more weight on salient structure)</figcaption>
         </figure>
       </div>
 
       <div class="grid-2">
         <figure>
           <img src="CBdragon_saliency_map.png" alt="CBdragon saliency map">
-          <figcaption>Saliency map</figcaption>
+          <figcaption>Saliency map (continuous heatmap)</figcaption>
         </figure>
         <figure>
           <img src="CBdragon_saliency_mask.png" alt="CBdragon saliency mask">
-          <figcaption>Saliency mask</figcaption>
+          <figcaption>Saliency mask (thresholded / used to bias budgets)</figcaption>
         </figure>
       </div>
 
@@ -813,14 +950,17 @@ while (n &lt; budget_from_prior) {
         <ul style="margin-top:.75rem;">
           <li><strong>Baseline time (4096 spp):</strong> <code>3693.3846</code> s</li>
           <li><strong>SBAS time (4096 spp):</strong> <code>2197.6018 + 40</code> s &nbsp;(<code>165.06%</code> speed-up)</li>
-          <li><strong>Notes:</strong> More samples on head/spines/specular ridges; fewer on background.</li>
+          <li><strong>Interpretation:</strong> We reached a similar visual quality sooner by not oversampling low-detail walls.</li>
         </ul>
       </details>
 
       <hr class="sep">
 
       <h3>CBspheres — Glass &amp; Metal Spheres (4096 spp)</h3>
-      <p class="inline-note">SBAS emphasizes salient areas on the spheres while reducing effort on walls/ceiling reflections.</p>
+      <p class="inline-note">
+        In this scene, the hard parts are specular highlights and caustic-like lighting near the spheres.
+        SBAS increases attention around the spheres and reduces sampling on uniform planar walls.
+      </p>
 
       <div class="grid-2">
         <figure>
@@ -860,7 +1000,7 @@ while (n &lt; budget_from_prior) {
         <ul style="margin-top:.75rem;">
           <li><strong>Baseline time (4096 spp):</strong> <code>1122.1510</code> s</li>
           <li><strong>SBAS time (4096 spp):</strong> <code>443.9791 + 40</code> s &nbsp;(<code>231.86%</code> speed-up)</li>
-          <li><strong>Notes:</strong> More samples under spheres (caustics) + specular highlights; fewer on planar walls.</li>
+          <li><strong>Interpretation:</strong> Most pixels converge early (walls), so SBAS avoids oversampling them and spends compute on the spheres.</li>
         </ul>
       </details>
     </section>
@@ -902,15 +1042,15 @@ while (n &lt; budget_from_prior) {
       </ul>
 
       <p class="callout">
-        <strong>Reading tip.</strong> If you’re skimming: look at the SBAS timing blocks, then jump back to the MIS estimator equations.
-        That’s the “why we got speed” loop.
+        <strong>Quick summary of contributions:</strong> materials (BSDFs) make the physics richer, MIS reduces noise by sampling better directions,
+        and SBAS reduces wasted compute by sampling better pixels.
       </p>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 CS184/284A, UC Berkeley</p>
-    <p style="margin-top:.35rem;">Built as a single-file static page (no frameworks). Typeset with KaTeX.</p>
+    <p style="margin-top:.35rem;">Single-file static page. Typeset with KaTeX.</p>
   </footer>
 </body>
 </html>
