@@ -6,7 +6,16 @@ This repo contains the **[GitHub Page](https://eduardo1100.github.io/cs-184-fina
 - **Multiple Importance Sampling (MIS)** for direct lighting: **light sampling + BSDF sampling** blended with the **power heuristic** (with delta-aware handling).
 - **Saliency-Biased Adaptive Sampling (SBAS)**: a **ViT/CLIP saliency prior** used to bias per-pixel sampling budgets and convergence thresholds.
 
+## Baseline (adaptive sampling + MIS)
+### Ray Sampling Visualization
 ![Baseline sampling](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_4096spp_rate.png)
+### Resulting Render
+![Baseline render](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_4096spp.png)
+
+## SBAS (ViT-guided)
+### Ray Sampling Visualization
 ![SBAS sampling](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_SBAS_4096spp_rate.png)
+### Resulting Render
+![SBAS render](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_SBAS_4096spp.png)
 
 
