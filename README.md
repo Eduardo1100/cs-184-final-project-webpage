@@ -11,7 +11,7 @@ https://eduardo1100.github.io/CS184-final-project/final_materials/index.html
 
 ---
 
-## What we built (plain-English + rigorous)
+## What we built
 
 ### 1) Advanced materials (BSDFs)
 A **BSDF** (Bidirectional Scattering Distribution Function) is the rule that tells the renderer how a surface redirects incoming light. Different BSDFs produce different visual effects and also change what sampling strategies work well.
