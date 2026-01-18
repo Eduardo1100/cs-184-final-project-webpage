@@ -1,19 +1,16 @@
-# CS184/284A Homework Webpage Repo
+# CS184/284A Final Project — MIS + ML-guided Adaptive Sampling (SBAS)
 
-The goal of this repo is to provide a template from which students can host CS184/284A homework writeups. 
+This repo hosts the **GitHub Pages** write-up for our CS184/284A final project: extending a path tracer with:
 
-Feel free to be as creative as you want with this! As long as your writeup is easily readable to staff members who are grading, and can be printed into a readable PDF (for submission to Gradescope), we would be happy with it!
+- **Advanced BSDFs**: mirror (delta reflection), glass (delta reflection + refraction with Fresnel), and **microfacet conductor** (Beckmann NDF + conductor Fresnel with \(\eta, k\)).
+- **Multiple Importance Sampling (MIS)** for direct lighting: **light sampling + BSDF sampling** blended with the **power heuristic** (with delta-aware handling).
+- **Saliency-Biased Adaptive Sampling (SBAS)**: a **ViT/CLIP saliency prior** used to bias per-pixel sampling budgets and convergence thresholds.
 
-Some students choose to utilize a static website generator, and have found success with
-- [Just the docs](https://just-the-docs.com/) -- our course site is actually built off this!
-- [Lanyon](https://lanyon.io/)
+The site is a single static HTML page (with KaTeX for math) intended to be served via **GitHub Pages**.
 
-You can work as you go, testing locally, by locating the folder for each assignment, and opening the `index.html` file within it.
+---
 
-## Enabling Github Pages
+[Live Site](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/index.html)
 
-To enable Github pages, go to the 'Settings' tab then click on 'Pages'. Under 'Build and Deployment' -> 'Branch', make sure that the branch is set to 'master' and the folder is set to 'root'. If these settings are correct, you should see a message saying "Your site is live at [website url]" at the top of the 'Pages' page, and navigating to the github page link should render index.html.
 
-## Adding Homework Webpages
 
-There are 4 folders, one for each homework. Each contains an index.html file. When the links from the mainpage are clicked, these files will be loaded, so edit these to add your homework webpages.
