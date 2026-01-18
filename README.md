@@ -7,7 +7,7 @@ This repository hosts the **project webpage (HTML)** for our CS184/284A final pr
 2) **Where we spend samples in the image** (SBAS with a ViT/CLIP saliency prior)
 
 **Project webpage (with nicely rendered math):**  
-https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/index.html
+https://eduardo1100.github.io/cs-184-final-project/final_materials/index.html
 
 ---
 
@@ -78,20 +78,20 @@ Safety rails so the prior can’t harm results if it’s wrong:
 ### Baseline (adaptive sampling + MIS)
 
 **Pixel sampling visualization (where the renderer spent samples):**  
-![Baseline sampling](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_4096spp_rate.png)
+![Baseline sampling](./final_materials/CBdragon_4096spp_rate.png)
 
 **Resulting render:**  
-![Baseline render](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_4096spp.png)
+![Baseline render](./final_materials/CBdragon_4096spp.png)
 
 ---
 
 ### SBAS (ViT-guided)
 
 **Pixel sampling visualization (saliency-biased allocation):**  
-![SBAS sampling](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_SBAS_4096spp_rate.png)
+![SBAS sampling](./final_materials/CBdragon_SBAS_4096spp_rate.png)
 
 **Resulting render:**  
-![SBAS render](https://eduardo1100.github.io/cs-184-final-project-webpage/final_materials/CBdragon_SBAS_4096spp.png)
+![SBAS render](./final_materials/CBdragon_SBAS_4096spp.png)
 
 ---
 
