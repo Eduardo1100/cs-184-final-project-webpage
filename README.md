@@ -6,7 +6,7 @@ This repository hosts the **project webpage (HTML)** for our CS184/284A final pr
 1) **How we choose random light directions** (MIS), and  
 2) **Where we spend samples in the image** (SBAS with a ViT/CLIP saliency prior)
 
-**Project webpage (with nicely rendered math):**  
+**Final Project Webpage (with nicely rendered math):**  
 https://eduardo1100.github.io/CS184-final-project/final_materials/index.html
 
 ---
